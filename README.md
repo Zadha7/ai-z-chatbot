@@ -1,8 +1,9 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Zadha chatbot</title>
+  <title> ZAdha Chatbot </title>
   <link
     href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.3/dist/tailwind.min.css"
     rel="stylesheet"
@@ -26,7 +27,7 @@
       color: #e2e8f0;
     }
     .dark-theme .message-right {
-      background-color: #7299e1; /* Blue message background for right-aligned messages */
+      background-color: #4299e1; /* Blue message background for right-aligned messages */
       color: #e2e8f0;
     }
   </style>
@@ -58,7 +59,7 @@
               class="bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded w-full sm:w-auto"
               id="sendButton"
             >
-              Asked !
+              Ask Dom!
             </button>
           </div>
         </div>
@@ -118,7 +119,7 @@
           messageElement.textContent += "Error getting response from server. Refresh the page and try again.";
           chatbox.scrollTop = chatbox.scrollHeight;
           receiving = false;
-          sendButton.textContent = "Asked !";
+          sendButton.textContent = "Ask Dom!";
         }
       };
     }
