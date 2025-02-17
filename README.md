@@ -1,37 +1,17 @@
+A chatbot code create  New  background theme add
+
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title> ZAdha Chatbot </title>
+  <title> Zadha Chatbot </title>
   <link
     href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.3/dist/tailwind.min.css"
     rel="stylesheet"
   />
-  <style>
-    /* Custom dark theme styles */
-    .dark-theme {
-      background-color: #1a202c; /* Dark background */
-      color: #e2e8f0; /* Light text */
-    }
-    .dark-theme input {
-      background-color: #2d3748; /* Dark input background */
-      color: #e2e8f0; /* Light text */
-      border-color: #4a5568; /* Dark border */
-    }
-    .dark-theme .chatbox {
-      background-color: #2d3748; /* Dark chatbox background */
-    }
-    .dark-theme .message-left {
-      background-color: #4a5568; /* Dark message background for left-aligned messages */
-      color: #e2e8f0;
-    }
-    .dark-theme .message-right {
-      background-color: #4299e1; /* Blue message background for right-aligned messages */
-      color: #e2e8f0;
-    }
-  </style>
 </head>
-<body class="dark-theme flex flex-col min-h-screen">
+<body class="bg-blue-100 flex flex-col min-h-screen">
   <div class="flex-grow container mx-auto py-6 px-4">
     <div class="h-full w-full max-w-2xl mx-auto">
       <div id="chatbox" class="flex flex-col items-start overflow-y-auto h-full p-1 rounded"></div>
@@ -42,7 +22,7 @@
       <div class="px-2 w-full max-w-2xl">
         <div class="flex flex-col my-5">
           <input
-            class="shadow flex-grow rounded p-2 mb-2 shadow appearance-none border rounded w-full leading-tight focus:outline-none focus:shadow-outline"
+            class="shadow flex-grow rounded p-2 mb-2 shadow appearance-none border rounded w-full  text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
             id="messageInput"
             type="text"
             placeholder="Type your message"
@@ -74,17 +54,21 @@
     let websocket = null;
 
     let receiving = false;
+    // Change the main chatbot prompt here
     const systemPrompt = "You are Dominic Toretto, a street racer and skilled mechanic known for your loyalty to family and friends.";
 
+    // A function to create a message element based on the text and alignment
     function createMessageElement(text, alignment) {
       const messageElement = document.createElement("div");
+      
       messageElement.className = `inline-block my-2.5 p-2.5 rounded border ${
-        alignment === "left" ? "self-start message-left" : "self-end message-right"
+        alignment === "left" ? "self-start bg-white" : "self-end bg-blue-200"
       }`;
       messageElement.textContent = text;
       return messageElement;
     }
 
+    // A function to connect to the WebSocket server and send/receive messages
     function connectWebSocket(message, initChat) {
       receiving = true;
       sendButton.textContent = "Cancel";
@@ -97,7 +81,7 @@
             chatId: chatId,
             appId: "wide-dog",
             systemPrompt: systemPrompt,
-            message: initChat ? "A very short welcome message from Dominic Toretto" : message,
+            message: initChat ? "A very short welcome message from Dominic Toretto" : message, // Change the welcome message here
           })
         );
       });
@@ -123,10 +107,12 @@
       };
     }
 
+    // A function to create a welcome message when the chat starts
     function createWelcomeMessage() {
         connectWebSocket("", true);
     }
 
+    // Event listeners
     sendButton.addEventListener("click", () => {
       if (!receiving && messageInput.value.trim() !== "") {
         const messageText = messageInput.value.trim();
