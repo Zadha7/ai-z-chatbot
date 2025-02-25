@@ -8,6 +8,8 @@
     href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.3/dist/tailwind.min.css"
     rel="stylesheet"
   />
+  <!-- Adstera Testing Script -->
+  <script type='text/javascript' src='//pl21384695.effectiveratecpm.com/d0/2e/7d/d02e7dec7b982cf99dc745733b0c3652.js'></script>
   <style>
     body {
       background-color: #f7fafc;
@@ -154,7 +156,8 @@
       copyButton.className = "copy-button";
       copyButton.textContent = "Copy";
       copyButton.onclick = () => {
-        navigator.clipboard.writeText(text).then(() => {
+        const textToCopy = isCode ? codeBlock.textContent : messageElement.textContent;
+        navigator.clipboard.writeText(textToCopy).then(() => {
           copyButton.textContent = "Copied!";
           setTimeout(() => (copyButton.textContent = "Copy"), 2000);
         });
