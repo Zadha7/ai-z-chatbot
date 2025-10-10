@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Zadha - Realistic Handwriting Generator</title>
-    <meta name="description" content="Transform digital text into realistic handwritten notes with Zadha's AI-powered handwriting generator.">
+    <meta name="description" content="Transform digital text into realistic handwritten notes with Zadha's -powered handwriting generator.">
     
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Gloria+Hallelujah&family=Schoolbell&family=Indie+Flower&family=Cedarville+Cursive&family=Kalam&family=Atma&family=Dancing+Script&family=Permanent+Marker&display=swap" rel="stylesheet">
