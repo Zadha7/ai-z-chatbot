@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Free online image watermark tool. Add text or logo watermarks to your images with custom position, opacity, and size. Fast, secure, and easy to use.">
+    <title>Image Watermark Tool - Free ITMT Tool</title>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="tool-page">
+    <!-- Navigation -->
+    <nav>
+        <div class="container">
+            <a href="index.html" class="logo">Free ITMT Tool</a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <div class="mobile-toggle" id="mobileToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Tool Header -->
+    <div class="tool-header">
+        <div class="container">
+            <h1><i class="fas fa-image"></i> Image Watermark Tool</h1>
+            <p>Add custom text watermarks to your images. Perfect for protecting your photos and branding your content.</p>
+        </div>
+    </div>
+
+    <!-- Tool Container -->
+    <div class="container">
+        <div class="tool-container">
+            <!-- Upload Area -->
+            <div class="upload-area" id="uploadArea">
+                <i class="fas fa-cloud-upload-alt"></i>
+                <h3>Upload Your Image</h3>
+                <p>Click to browse or drag and drop your image here</p>
+                <p style="font-size: 0.9rem; color: var(--text-light); margin-top: 0.5rem;">Supported formats: JPG, PNG, WebP</p>
+                <input type="file" id="imageInput" accept="image/*">
+            </div>
+
+            <!-- Controls -->
+            <div class="controls" id="controls" style="display: none;">
+                <h3 style="margin-bottom: 1.5rem;">Watermark Settings</h3>
+                
+                <div class="control-group">
+                    <label for="watermarkText">Watermark Text</label>
+                    <input type="text" id="watermarkText" placeholder="Enter your watermark text" value="© Your Name">
+                </div>
+
+                <div class="control-group">
+                    <label for="fontSize">Font Size</label>
+                    <input type="range" id="fontSize" min="12" max="120" value="48">
+                    <span id="fontSizeValue">48px</span>
+                </div>
+
+                <div class="control-group">
+                    <label for="opacity">Opacity</label>
+                    <input type="range" id="opacity" min="0" max="100" value="70">
+                    <span id="opacityValue">70%</span>
+                </div>
+
+                <div class="control-group">
+                    <label for="position">Position</label>
+                    <select id="position">
+                        <option value="bottom-right">Bottom Right</option>
+                        <option value="bottom-left">Bottom Left</option>
+                        <option value="top-right">Top Right</option>
+                        <option value="top-left">Top Left</option>
+                        <option value="center">Center</option>
+                    </select>
+                </div>
+
+                <div class="control-group">
+                    <label for="textColor">Text Color</label>
+                    <input type="color" id="textColor" value="#ffffff">
+                </div>
+
+                <div class="control-group">
+                    <label for="fontFamily">Font Family</label>
+                    <select id="fontFamily">
+                        <option value="Arial">Arial</option>
+                        <option value="Helvetica">Helvetica</option>
+                        <option value="Times New Roman">Times New Roman</option>
+                        <option value="Georgia">Georgia</option>
+                        <option value="Courier New">Courier New</option>
+                        <option value="Verdana">Verdana</option>
+                        <option value="Impact">Impact</option>
+                    </select>
+                </div>
+
+                <div class="control-group">
+                    <label>
+                        <input type="checkbox" id="boldText"> Bold Text
+                    </label>
+                </div>
+            </div>
+
+            <!-- Preview Area -->
+            <div class="preview-area" id="previewArea" style="display: none;">
+                <h3 style="margin-bottom: 1rem;">Preview</h3>
+                <canvas id="canvas"></canvas>
+            </div>
+
+            <!-- Buttons -->
+            <div class="button-group" id="buttonGroup" style="display: none;">
+                <button class="btn btn-primary" id="downloadBtn">
+                    <i class="fas fa-download"></i> Download Image
+                </button>
+                <button class="btn btn-secondary" id="resetBtn">
+                    <i class="fas fa-redo"></i> Start Over
+                </button>
+            </div>
+
+            <div class="loader"></div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <!-- Column 1: Logo & Social -->
+                <div class="footer-column">
+                    <h3>Free ITMT Tool</h3>
+                    <p>Your trusted source for free online image and PDF tools. Fast, secure, and always free.</p>
+                    <div class="social-links">
+                        <a href="https://facebook.com" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://twitter.com" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="https://linkedin.com" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://instagram.com" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+
+                <!-- Column 2: Quick Links -->
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                    </ul>
+                </div>
+
+                <!-- Column 3: Tools -->
+                <div class="footer-column">
+                    <h3>Tools</h3>
+                    <ul>
+                        <li><a href="image-watermark.html">Image Watermark</a></li>
+                        <li><a href="image-to-text.html">Image to Text</a></li>
+                        <li><a href="pdf-merge.html">PDF Merge</a></li>
+                        <li><a href="text-to-pdf.html">Text to PDF</a></li>
+                        <li><a href="image-to-pdf.html">Image to PDF</a></li>
+                    </ul>
+                </div>
+
+                <!-- Column 4: Legal -->
+                <div class="footer-column">
+                    <h3>Legal</h3>
+                    <ul>
+                        <li><a href="privacy.html">Privacy Policy</a></li>
+                        <li><a href="disclaimer.html">Disclaimer</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2024 Free ITMT Tool. All rights reserved. Made with <i class="fas fa-heart" style="color: #eb347d;"></i> for everyone.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="js/main.js"></script>
+    <script src="js/image-watermark.js"></script>
+</body>
+</html>

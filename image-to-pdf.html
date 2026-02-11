@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Free online image to PDF converter. Convert single or multiple images into PDF documents. Easy drag-and-drop reordering.">
+    <title>Image to PDF Tool - Free ITMT Tool</title>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="tool-page">
+    <!-- Navigation -->
+    <nav>
+        <div class="container">
+            <a href="index.html" class="logo">Free ITMT Tool</a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <div class="mobile-toggle" id="mobileToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Tool Header -->
+    <div class="tool-header">
+        <div class="container">
+            <h1><i class="fas fa-images"></i> Image to PDF Tool</h1>
+            <p>Convert single or multiple images into PDF documents. Upload images and arrange them in any order you want.</p>
+        </div>
+    </div>
+
+    <!-- Tool Container -->
+    <div class="container">
+        <div class="tool-container">
+            <!-- Upload Area -->
+            <div class="upload-area" id="uploadArea">
+                <i class="fas fa-cloud-upload-alt"></i>
+                <h3>Upload Images</h3>
+                <p>Click to browse or drag and drop multiple images here</p>
+                <p style="font-size: 0.9rem; color: var(--text-light); margin-top: 0.5rem;">Supported formats: JPG, PNG, WebP</p>
+                <input type="file" id="imageInput" accept="image/*" multiple>
+            </div>
+
+            <!-- Image Grid -->
+            <div id="imageGridContainer" style="display: none; margin: 2rem 0;">
+                <h3 style="margin-bottom: 1rem;">Uploaded Images <span style="font-size: 0.9rem; color: var(--text-light);">(Drag to reorder)</span></h3>
+                <div id="imageGrid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 1rem;"></div>
+                
+                <div style="margin-top: 1rem; padding: 1rem; background: var(--bg-light); border-radius: 8px;">
+                    <p style="margin: 0; color: var(--text-light);"><i class="fas fa-info-circle"></i> <strong>Tip:</strong> Drag and drop images to change the order before converting to PDF.</p>
+                </div>
+            </div>
+
+            <!-- Options -->
+            <div id="optionsContainer" style="display: none; margin: 2rem 0;">
+                <h3 style="margin-bottom: 1rem;">PDF Options</h3>
+                
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem;">
+                    <div class="control-group">
+                        <label for="pageSize">Page Size</label>
+                        <select id="pageSize">
+                            <option value="a4" selected>A4</option>
+                            <option value="letter">Letter</option>
+                            <option value="legal">Legal</option>
+                        </select>
+                    </div>
+
+                    <div class="control-group">
+                        <label for="orientation">Orientation</label>
+                        <select id="orientation">
+                            <option value="portrait" selected>Portrait</option>
+                            <option value="landscape">Landscape</option>
+                        </select>
+                    </div>
+
+                    <div class="control-group">
+                        <label for="imagefit">Image Fit</label>
+                        <select id="imageFit">
+                            <option value="contain" selected>Fit to Page</option>
+                            <option value="cover">Fill Page</option>
+                            <option value="stretch">Stretch</option>
+                        </select>
+                    </div>
+
+                    <div class="control-group">
+                        <label for="margin">Margins (mm)</label>
+                        <select id="margin">
+                            <option value="0">No Margin</option>
+                            <option value="10" selected>10mm</option>
+                            <option value="20">20mm</option>
+                            <option value="30">30mm</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Buttons -->
+            <div class="button-group" id="buttonGroup" style="display: none;">
+                <button class="btn btn-primary" id="convertBtn">
+                    <i class="fas fa-file-pdf"></i> Convert to PDF
+                </button>
+                <button class="btn btn-secondary" id="addMoreBtn">
+                    <i class="fas fa-plus"></i> Add More Images
+                </button>
+                <button class="btn btn-secondary" id="resetBtn">
+                    <i class="fas fa-redo"></i> Start Over
+                </button>
+            </div>
+
+            <div class="loader"></div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <!-- Column 1: Logo & Social -->
+                <div class="footer-column">
+                    <h3>Free ITMT Tool</h3>
+                    <p>Your trusted source for free online image and PDF tools. Fast, secure, and always free.</p>
+                    <div class="social-links">
+                        <a href="https://facebook.com" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://twitter.com" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="https://linkedin.com" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://instagram.com" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+
+                <!-- Column 2: Quick Links -->
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                    </ul>
+                </div>
+
+                <!-- Column 3: Tools -->
+                <div class="footer-column">
+                    <h3>Tools</h3>
+                    <ul>
+                        <li><a href="image-watermark.html">Image Watermark</a></li>
+                        <li><a href="image-to-text.html">Image to Text</a></li>
+                        <li><a href="pdf-merge.html">PDF Merge</a></li>
+                        <li><a href="text-to-pdf.html">Text to PDF</a></li>
+                        <li><a href="image-to-pdf.html">Image to PDF</a></li>
+                    </ul>
+                </div>
+
+                <!-- Column 4: Legal -->
+                <div class="footer-column">
+                    <h3>Legal</h3>
+                    <ul>
+                        <li><a href="privacy.html">Privacy Policy</a></li>
+                        <li><a href="disclaimer.html">Disclaimer</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2024 Free ITMT Tool. All rights reserved. Made with <i class="fas fa-heart" style="color: #eb347d;"></i> for everyone.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- jsPDF Library -->
+    <script src="https://cdn.jsdelivr.net/npm/jspdf@2.5.1/dist/jspdf.umd.min.js"></script>
+    
+    <!-- JavaScript -->
+    <script src="js/main.js"></script>
+    <script src="js/image-to-pdf.js"></script>
+</body>
+</html>
